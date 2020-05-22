@@ -1,14 +1,24 @@
-//TODO turn blocks white on restart + can we change the selection color? maybe add above grid (branch!!!!!)
+//TODO this commit: build selection color picker
 
 var boxes = document.querySelectorAll(".section");
 
 // Box panel functions
 for (const box of boxes) {   
-    box.addEventListener("click", function selectBox(e) {
+    box.addEventListener("click", function toggleSelected(e) {
         console.log(e.target);
-        e.target.classList.add("selected");       
+        if (e.target.classList.contains("selected")) {
+            e.target.classList.remove("selected");    
+        } else {
+            e.target.classList.add("selected");    
+        }
+           
     });  
 }
+
+const selectionColor = document.getElementById("selection-color");
+selectionColor.addEventListener("change", function changeColor(e) {
+    document.documentElement.style.setProperty("--selectedcolor", e.target.value);
+});
 
 // Form functions
 const saveButton = document.querySelector("#save");
