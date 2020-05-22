@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Responsive layout generator</title>
+        <link href="css/app.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Create an HTML website shell with just drag and drop.</h1>
+        <p>Rotate and drag the components to create exactly the layout you envision.</p>
+        <ol>
+            <li>Design desktop layout.</li>
+            <div class="horizontal">
+                <div class="box">
+                    <div class="box section chosen"></div>
+                    <div class="box section"></div>
+                    <div class="box section"></div>
+                    <div class="box section"></div>
+                    <div class="box section"></div>
+                    <div class="box section"></div>
+                    <div class="box section"></div>
+                    <div class="box section"></div>
+                    <div class="box section"></div>
+                    <div class="box section"></div>
+                    <div class="box section"></div>
+                    <div class="box section"></div>
+                </div>
+                <div class="options">
+                    <label>Add name for section: </label><input type="text"><br>
+                    <label>Select color for section: </label><input type="color"><br>
+                    <button>ADD SECTION</button>
+                    <button>RESTART</button>
+                </div>             
+            </div>
+        </ol>
+    </body>
+</html>
+
+<script>
+    const boxes = document.querySelectorAll('.section');
+    
+    boxes.forEach(addEventListener('click', function selectBox(e) {
+        console.log(e.target);
+            e.target.classList.add("selected");       
+    }));
+</script>

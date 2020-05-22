@@ -1,0 +1,25 @@
+.box {
+    border: 2px solid black;
+    width: 50vw;
+    height: 70vh;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.section {
+    border: 1px dotted;
+    border-bottom: none;
+    width: 33%;
+    height: 25%;
+    
+}
+
+.horizontal {
+    display: flex;
+}
+
+.selected{
+    background-color: blue;
+}
