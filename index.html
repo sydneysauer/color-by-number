@@ -9,22 +9,17 @@
         <p>Rotate and drag the components to create exactly the layout you envision.</p>
         <ol>
             <li>Design desktop layout.</li>
-            <label>Selection color: </label>
-            <input type="color" id="selection-color" value="#47bbed">
-            <div class="horizontal">
-                <div class="box">
-                    <div class="box section"></div>
-                    <div class="box section"></div>
-                    <div class="box section"></div>
-                    <div class="box section"></div>
-                    <div class="box section"></div>
-                    <div class="box section"></div>
-                    <div class="box section"></div>
-                    <div class="box section"></div>
-                    <div class="box section"></div>
-                    <div class="box section"></div>
-                    <div class="box section"></div>
-                    <div class="box section"></div>
+            <div class="initial-options"> 
+                <p> How may rows and columns do you want to work with?</p>
+                <label>Rows: </label><input type="number" value="4" id="rows">
+                <label>Columns: </label><input type="number" value="12" id="columns">
+                <button id="start">Let's Go!</button>
+            </div>
+              
+            <div class="hidden">
+                <label>Selection color: </label>
+                <input type="color" id="selection-color" value="#47bbed">
+                <div class="box grid">                  
                 </div>
                 <div class="options">
                     <label>Add name for section: </label><input type="text" id="name"><br>

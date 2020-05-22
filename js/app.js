@@ -1,19 +1,49 @@
-//TODO this commit: build selection color picker
+//TODO this commit: create box from user specs
 
-var boxes = document.querySelectorAll(".section");
+// Create grid
+var startBtn = document.querySelector("#start");
+startBtn.addEventListener("click", function buildGrid() {
+    // Hide initial options
+    const grid = document.querySelector(".hidden");
+    grid.classList.add("horizontal");
+    grid.classList.remove("hidden");
+    document.querySelector(".initial-options").classList.add("hidden");
 
-// Box panel functions
-for (const box of boxes) {   
+    var rows = document.querySelector('#rows').value;
+    var columns = document.querySelector('#columns').value;
+
+    document.documentElement.style.setProperty("--height", ((1/rows) * 100 + "%"));
+    document.documentElement.style.setProperty("--width", ((1/columns) * 100 + "%"));
+    const mainBox = document.querySelector(".grid");
+    for (var i = 0; i < rows; i ++) {
+        const newRow = document.createElement("div");
+        newRow.classList.add("row"); 
+        mainBox.appendChild(newRow);
+        for (var j = 0; j < columns; j++) {
+            console.log("inside inner");
+            const newColumn = document.createElement("div");
+            newColumn.classList.add("section");
+            newRow.appendChild(newColumn);
+        }
+    }
+    
+    console.log("Rows: " + rows); 
+    console.log("Cols: " + columns);
+    var boxes = document.querySelectorAll(".section");
+    // Box panel functions
+    for (const box of boxes) {   
     box.addEventListener("click", function toggleSelected(e) {
         console.log(e.target);
         if (e.target.classList.contains("selected")) {
             e.target.classList.remove("selected");    
         } else {
             e.target.classList.add("selected");    
-        }
-           
+        }          
     });  
-}
+}   
+});
+
+
 
 const selectionColor = document.getElementById("selection-color");
 selectionColor.addEventListener("change", function changeColor(e) {
@@ -50,16 +80,6 @@ saveButton.addEventListener("click", function saveData() {
 const restartButton = document.querySelector('#restart');
 restartButton.addEventListener("click", function deselectAll() {
     window.location.reload();
-    /*
-    for (const box of boxes) {
-        box.classList.remove("selected");
-        box.classList.remove("submitted");
-        box.innerHTML = "";   
-        boxes.forEach(function(item) {
-            item.style.background = "white";
-        }); 
-    }
-    */
 });
 
 

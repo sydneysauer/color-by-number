@@ -7,14 +7,28 @@ div {
     color: black;
 }
 
+.hidden {
+    display: none;
+}
+
 :root {
     --selectedcolor: #47bbed;
+    --height: 25%;
+    --width: 33.3%;
+}
+
+.row {
+    height: var(--height);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border: 1px dotted black;
 }
 
 .box {
     border: 2px solid black;
-    width: 50vw;
-    height: 70vh;
+    width: 60vw;
+    height: 75vh;
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -22,11 +36,9 @@ div {
 }
 
 .section {
-    width: 33.3%;
-    height: 25%;
-    border: 1px dotted;
-    border-bottom: none;
-    border-right: none;
+    width: var(--width);
+    height: 100%;
+    border: 1px dotted;  
     box-sizing: border-box;    
 }
 
