@@ -1,11 +1,10 @@
-//TODO this commit: create box from user specs
-
+// Next time: create color object. then initialize array of these where you can save name/color pairs instead of printing
 // Create grid
 var startBtn = document.querySelector("#start");
 startBtn.addEventListener("click", function buildGrid() {
     // Hide initial options
     const grid = document.querySelector(".hidden");
-    grid.classList.add("horizontal");
+    grid.classList.add("vertical");
     grid.classList.remove("hidden");
     document.querySelector(".initial-options").classList.add("hidden");
 
@@ -30,7 +29,7 @@ startBtn.addEventListener("click", function buildGrid() {
     console.log("Rows: " + rows); 
     console.log("Cols: " + columns);
     var boxes = document.querySelectorAll(".section");
-    // Box panel functions
+    // Add box panel functions
     for (const box of boxes) {   
     box.addEventListener("click", function toggleSelected(e) {
         console.log(e.target);

@@ -1,34 +1,48 @@
 <html>
     <head>
-        <title>Responsive layout generator</title>
+        <title>Color-By-Number Grid</title>
         <link href="css/app.css" rel="stylesheet">
         
     </head>
-    <body>
-        <h1>Create an HTML website shell with just drag and drop.</h1>
-        <p>Rotate and drag the components to create exactly the layout you envision.</p>
-        <ol>
-            <li>Design desktop layout.</li>
-            <div class="initial-options"> 
-                <p> How may rows and columns do you want to work with?</p>
-                <label>Rows: </label><input type="number" value="4" id="rows">
-                <label>Columns: </label><input type="number" value="12" id="columns">
-                <button id="start">Let's Go!</button>
+    <body>        
+        <div class="initial-options"> 
+            <p> How may rows and columns do you want to work with?</p>
+            <label>Rows: </label><input type="number" value="25" id="rows"><br>
+            <label>Columns: </label><input type="number" value="25" id="columns"><br>
+            <button id="start">Let's Go!</button>
+        </div>
+            
+        <div class="hidden">          
+            <div class="box grid"></div>
+
+            <div class="horizontal">
+                <div class="vertical">
+                    <h3>Options</h3>
+                    <div class="horizontal">
+                        <label>Change selection color: </label>
+                        <input type="color" id="selection-color" value="#47bbed">
+                    </div>  
+                    <button id="restart">START OVER</button>
+                    <button id="finish">FINISHED</button>
+                </div>  
+                <div class="options vertical">
+                    <h3>Add New Color</h3>
+                    <div class="horizontal">
+                        <label>Name: </label><input type="text" id="name" value="1"><br>
+                    </div>
+                    <div class="horizontal">
+                        <label>Color: </label><input type="color" id="color"><br>
+                    </div>
+                    <button id="save">ADD COLOR</button>                
+                </div>  
+                <div class="vertical">
+                    <h3>Use Existing Color</h3>
+                    <p>List of colors to choose from here</p>     
+                    <button id="select">CHOOSE COLOR</button>          
+                </div>                
             </div>
-              
-            <div class="hidden">
-                <label>Selection color: </label>
-                <input type="color" id="selection-color" value="#47bbed">
-                <div class="box grid">                  
-                </div>
-                <div class="options">
-                    <label>Add name for section: </label><input type="text" id="name"><br>
-                    <label>Select color for section: </label><input type="color" id="color"><br>
-                    <button id="save">ADD SECTION</button>
-                    <button id="restart">RESTART</button>
-                </div>             
-            </div>
-        </ol>
+            
+        </div>
     </body>
     <script src="js/app.js"></script>
 </html>

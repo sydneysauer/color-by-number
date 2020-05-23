@@ -6,6 +6,9 @@ html {
 div {
     color: black;
 }
+p {
+    margin: 0;
+}
 
 .hidden {
     display: none;
@@ -22,12 +25,13 @@ div {
     width: 100%;
     display: flex;
     flex-direction: row;
-    border: 1px dotted black;
+    border: 1px solid black;
+    box-sizing: border-box;  
 }
 
 .box {
     border: 2px solid black;
-    width: 60vw;
+    width: 75vw;
     height: 75vh;
     margin: auto;
     display: flex;
@@ -38,12 +42,19 @@ div {
 .section {
     width: var(--width);
     height: 100%;
-    border: 1px dotted;  
+    border-left: 1px solid;  
+
     box-sizing: border-box;    
 }
 
 .horizontal {
     display: flex;
+}
+
+.vertical {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
 }
 
 .selected{
@@ -53,4 +64,6 @@ div {
 .highlight {
     color: black;
     background: white;
+    font-size: 20px;
+   text-align: center;
 }
