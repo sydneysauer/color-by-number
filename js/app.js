@@ -1,4 +1,4 @@
-// Next time: create color object. then initialize array of these where you can save name/color pairs instead of printing
+// Next time: condense color selection -- add option to "add new" which shows and hides adding grid
 // Create grid
 var startBtn = document.querySelector("#start");
 startBtn.addEventListener("click", function buildGrid() {
@@ -56,6 +56,7 @@ saveButton.addEventListener("click", function saveData() {
     const colorField = document.getElementById("color");
     var name = nameField.value;
     var color = colorField.value;
+    addToColorList(color, name);
     var selectedDivs = document.querySelectorAll(".selected");
     selectedDivs.forEach(function setProperties(item) {
         if (!item.classList.contains("submitted")) {
@@ -68,7 +69,6 @@ saveButton.addEventListener("click", function saveData() {
         }
         item.classList.remove("selected");
     });
-    console.log(selectedDivs);
 
 
     // Reset fields to default
@@ -82,4 +82,41 @@ restartButton.addEventListener("click", function deselectAll() {
 });
 
 
+// Color selection (Add, choose existing)
+var colors = [];
+const choices = document.querySelector("#all-colors");
+function addToColorList(color, label) {
+    if (!label) { label = color;}
+    const currColor = {
+        color: color,
+        name: label
+    };
+    colors.push(currColor);
+
+    //Update radio button list
+    const colorDesc = document.createElement("div");
+    const groupName = "colorList"
+    colorDesc.classList.add("horizontal");
+    colorDesc.innerHTML = `<input type="radio" name="${groupName}">
+    <label value="${label}" style="border-bottom: 3px solid ${color};"> ${label} </label>`;
+    choices.appendChild(colorDesc);
+    console.log(colors);
+
+
+  /*
+    const groupName = "color-list";
+    const newColor = document.createElement("input");
+    newColor.setAttribute("type", "radio");
+    newColor.setAttribute("value", label);
+    newColor.setAttribute("name", groupName);
     
+    const newColorLabel = document.createElement("label");
+    newColorLabel.innerHTML = label;
+    newColorLabel.setAttribute("style", `color: ${color}`);
+    //newColorLabel.innerHTML = `<span style="background-color: ${color}" class="color-chunk"></span>${label}`;
+
+    choices.appendChild(newColor);
+    choices.appendChild(newColorLabel)
+    
+    */
+}

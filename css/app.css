@@ -29,6 +29,11 @@ p {
     box-sizing: border-box;  
 }
 
+.color-chunk {
+    width: 20px;
+    height: 20px;
+}
+
 .box {
     border: 2px solid black;
     width: 75vw;
