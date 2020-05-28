@@ -4,9 +4,11 @@ var startBtn = document.querySelector("#start");
 startBtn.addEventListener("click", function buildGrid() {
     // Hide initial options
     const grid = document.querySelector(".hidden");
-    grid.classList.add("vertical");
     grid.classList.remove("hidden");
-    document.querySelector(".initial-options").classList.add("hidden");
+    grid.classList.add("vertical");
+    const startScreeen = document.querySelector(".initial-options");
+    startScreeen.classList.remove("initial-options");
+    startScreeen.classList.add("hidden");
 
     var rows = document.querySelector('#rows').value;
     var columns = document.querySelector('#columns').value;
@@ -103,7 +105,7 @@ colorBtn.addEventListener("click", function selectColor() {
 
 
 
-// Restar process button
+// Restart button
 const restartButton = document.querySelector('#restart');
 restartButton.addEventListener("click", function deselectAll() {
     window.location.reload();

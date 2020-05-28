@@ -29,6 +29,15 @@ p {
     box-sizing: border-box;  
 }
 
+.initial-options {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .color-chunk {
     width: 20px;
     height: 20px;
@@ -36,9 +45,9 @@ p {
 
 .box {
     border: 2px solid black;
-    width: 75vw;
-    height: 75vh;
-    margin: auto;
+    width: 95vh;
+    height: 95vh;
+
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -59,7 +68,6 @@ p {
 .vertical {
     display: flex;
     flex-direction: column;
-    margin: auto;
 }
 
 .selected{
@@ -71,4 +79,12 @@ p {
     background: white;
     font-size: 20px;
    text-align: center;
+}
+.center {
+    justify-content: space-evenly;
+}
+
+#all-colors {
+    max-height: 40vh;
+    overflow-y: scroll;
 }

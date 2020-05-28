@@ -12,37 +12,37 @@
             <button id="start">Let's Go!</button>
         </div>
             
-        <div class="hidden">          
-            <div class="box grid"></div>
-
-            <div class="horizontal">
+        <div class="hidden">      
+            <div class="horizontal center">
+                <div class="box grid"></div>
                 <div class="vertical">
-                    <h3>Options</h3>
-                    <div class="horizontal">
-                        <label>Change selection color: </label>
-                        <input type="color" id="selection-color" value="#47bbed">
+                    
+                    <div class="options vertical">
+                        <h3>Add Color to List</h3>
+                        <div class="horizontal">
+                            <label>Name: </label><input type="text" id="name" value="1"><br>
+                        </div>
+                        <div class="horizontal">
+                            <label>Color: </label><input type="color" id="color"><br>
+                        </div>
+                        <button id="save">ADD COLOR</button>                
                     </div>  
-                    <button id="restart">START OVER</button>
-                    <button id="finish">FINISHED</button>
-                </div>  
-                <div class="options vertical">
-                    <h3>Add New Color</h3>
-                    <div class="horizontal">
-                        <label>Name: </label><input type="text" id="name" value="1"><br>
-                    </div>
-                    <div class="horizontal">
-                        <label>Color: </label><input type="color" id="color"><br>
-                    </div>
-                    <button id="save">ADD COLOR</button>                
-                </div>  
-                <div class="vertical">
-                    <h3>Use Existing Color</h3>
-                    <div id="all-colors" class="vertical"></div>
-                    <button id="select">SELECT COLOR</button>          
-                </div>                
+                    <div class="vertical">
+                        <h3>Choose Color for Selected</h3>
+                        <div id="all-colors" class="vertical"></div>
+                        <button id="select">SELECT COLOR</button>          
+                    </div>     
+                    <div class="vertical">
+                        <h3>Settings</h3>
+                        <div class="horizontal">
+                            <label>Change selection color: </label>
+                            <input type="color" id="selection-color" value="#47bbed">
+                        </div>  
+                        <button id="restart">START OVER</button>
+                        <button id="finish">FINISHED</button>
+                    </div>  
+                </div>           
             </div>
-            
-            
         </div>
     </body>
     <script src="js/app.js"></script>
