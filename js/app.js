@@ -49,7 +49,7 @@ selectionColor.addEventListener("change", function changeColor(e) {
     document.documentElement.style.setProperty("--selectedcolor", e.target.value);
 });
 
-// Form functions
+// Save new color functions
 const saveButton = document.querySelector("#save");
 saveButton.addEventListener("click", function saveData() {
     const nameField = document.getElementById("name");
@@ -57,18 +57,6 @@ saveButton.addEventListener("click", function saveData() {
     var name = nameField.value;
     var color = colorField.value;
     addToColorList(color, name);
-    var selectedDivs = document.querySelectorAll(".selected");
-    selectedDivs.forEach(function setProperties(item) {
-        if (!item.classList.contains("submitted")) {
-            item.style.background = color;
-            //item.innerHTML = "<span class=\"highlight\">" + name + "</span>";
-            var nameText = document.createElement("P");
-            nameText.innerHTML = "<span class=\"highlight\">" + name + "</span>";
-            item.appendChild(nameText);
-            item.classList.add("submitted");         
-        }
-        item.classList.remove("selected");
-    });
 
 
     // Reset fields to default
@@ -76,13 +64,7 @@ saveButton.addEventListener("click", function saveData() {
     colorField.value = "#000000";    
 });
 
-const restartButton = document.querySelector('#restart');
-restartButton.addEventListener("click", function deselectAll() {
-    window.location.reload();
-});
-
-
-// Color selection (Add, choose existing)
+// Add color 
 var colors = [];
 const choices = document.querySelector("#all-colors");
 function addToColorList(color, label) {
@@ -95,28 +77,35 @@ function addToColorList(color, label) {
 
     //Update radio button list
     const colorDesc = document.createElement("div");
-    const groupName = "colorList"
+    const groupName = "colorList";
     colorDesc.classList.add("horizontal");
-    colorDesc.innerHTML = `<input type="radio" name="${groupName}">
-    <label value="${label}" style="border-bottom: 3px solid ${color};"> ${label} </label>`;
+    colorDesc.innerHTML = `<input type="radio" name="${groupName}" value="${color}">
+    <label style="border-bottom: 3px solid ${color};"> ${label} </label>`;
     choices.appendChild(colorDesc);
     console.log(colors);
-
-
-  /*
-    const groupName = "color-list";
-    const newColor = document.createElement("input");
-    newColor.setAttribute("type", "radio");
-    newColor.setAttribute("value", label);
-    newColor.setAttribute("name", groupName);
-    
-    const newColorLabel = document.createElement("label");
-    newColorLabel.innerHTML = label;
-    newColorLabel.setAttribute("style", `color: ${color}`);
-    //newColorLabel.innerHTML = `<span style="background-color: ${color}" class="color-chunk"></span>${label}`;
-
-    choices.appendChild(newColor);
-    choices.appendChild(newColorLabel)
-    
-    */
 }
+
+// Apply color to boxes
+const colorBtn = document.querySelector("#select");
+colorBtn.addEventListener("click", function selectColor() {
+    const color = document.querySelector('input[name="colorList"]:checked').value;
+    console.log("Current color: " + color);
+    var selectedDivs = document.querySelectorAll(".selected");
+    selectedDivs.forEach(function setProperties(item) {
+        if (!item.classList.contains("submitted")) {
+            item.style.background = color;
+            //item.innerHTML = "<span class=\"highlight\">" + name + "</span>";
+            item.classList.add("submitted");         
+        }
+        item.classList.remove("selected");
+    });
+})
+
+
+
+// Restar process button
+const restartButton = document.querySelector('#restart');
+restartButton.addEventListener("click", function deselectAll() {
+    window.location.reload();
+});
+
