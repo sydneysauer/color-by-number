@@ -21,7 +21,6 @@ startBtn.addEventListener("click", function buildGrid() {
         newRow.classList.add("row"); 
         mainBox.appendChild(newRow);
         for (var j = 0; j < columns; j++) {
-            console.log("inside inner");
             const newColumn = document.createElement("div");
             newColumn.classList.add("section");
             newRow.appendChild(newColumn);
@@ -95,7 +94,7 @@ colorBtn.addEventListener("click", function selectColor() {
     var selectedDivs = document.querySelectorAll(".selected");
     selectedDivs.forEach(function setProperties(item) {
         if (!item.classList.contains("submitted")) {
-            item.style.background = color;
+            item.style.backgroundColor = `${color}`;
             //item.innerHTML = "<span class=\"highlight\">" + name + "</span>";
             item.classList.add("submitted");         
         }
@@ -111,3 +110,39 @@ restartButton.addEventListener("click", function deselectAll() {
     window.location.reload();
 });
 
+// Finished button 
+const finishButton = document.querySelector("#finish");
+finishButton.addEventListener("click", function saveDrawing() {
+    const boxes = document.querySelectorAll(".section");
+    boxes.forEach(box => {
+        var colorId = colors.length + 1;
+        if (box.style.backgroundColor) {
+            console.log(box.style.backgroundColor);
+            const boxColor = rgbToHex(box.style.backgroundColor);
+            const colorObj = colors.find(function(element) {
+                return element.color == boxColor;
+            });
+            colorId = colors.indexOf(colorObj) + 1;
+        }
+        
+        console.log(colorId);
+        // Put the colorId inside each box
+        // Make all boxes white
+        // Hide/fade out side elements
+        // Print button / reminder /etc
+    })
+})
+
+function rgbToHex(col)
+{
+    if(col.charAt(0)=='r')
+    {
+        col=col.replace('rgb(','').replace(')','').split(',');
+        var r=parseInt(col[0], 10).toString(16);
+        var g=parseInt(col[1], 10).toString(16);
+        var b=parseInt(col[2], 10).toString(16);
+        r=r.length==1?'0'+r:r; g=g.length==1?'0'+g:g; b=b.length==1?'0'+b:b;
+        var colHex='#'+r+g+b;
+        return colHex;
+    }
+}
