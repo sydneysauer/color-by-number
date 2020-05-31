@@ -115,7 +115,7 @@ const finishButton = document.querySelector("#finish");
 finishButton.addEventListener("click", function saveDrawing() {
     const boxes = document.querySelectorAll(".section");
     boxes.forEach(box => {
-        var colorId = colors.length + 1;
+        var colorId = ""; //Makes white boxes empty
         if (box.style.backgroundColor) {
             console.log(box.style.backgroundColor);
             const boxColor = rgbToHex(box.style.backgroundColor);
@@ -127,10 +127,32 @@ finishButton.addEventListener("click", function saveDrawing() {
         
         console.log(colorId);
         // Put the colorId inside each box
+        box.innerHTML = colorId;
         // Make all boxes white
-        // Hide/fade out side elements
-        // Print button / reminder /etc
+        box.style.backgroundColor = "white";
     })
+
+    // Hide/fade out side elements
+    const sideBar = document.querySelector(".options");
+    sideBar.style.display = "none";
+    
+    // Add color list vertically aligned
+    var colorkey = "";
+    if (colors.length > 0) {
+        colors.forEach(color => {
+            colorkey += `<div class="horizontal">
+            <span class="color-chunk" style="background-color: ${color.color}"></span><p>${color.name}</p>
+            </div>`;
+        });
+    }
+
+    const key = document.querySelector(".colorkey");
+    key.classList.remove("hidden");
+    key.innerHTML = colorkey;
+    document.querySelector(".finish-page").classList.add("vertical");
+
+    // Print button / reminder /etc
+    window.print();
 })
 
 function rgbToHex(col)

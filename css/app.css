@@ -41,6 +41,8 @@ p {
 .color-chunk {
     width: 20px;
     height: 20px;
+    border-radius: 50%;
+    display: block;
 }
 
 .box {
@@ -57,7 +59,7 @@ p {
     width: var(--width);
     height: 100%;
     border-left: 1px solid;  
-
+    text-align: center;
     box-sizing: border-box;    
 }
 
