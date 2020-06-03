@@ -141,7 +141,7 @@ finishButton.addEventListener("click", function saveDrawing() {
     if (colors.length > 0) {
         colors.forEach(color => {
             colorkey += `<div class="horizontal">
-            <span class="color-chunk" style="background-color: ${color.color}"></span><p>${color.name}</p>
+            <span class="color-chunk" style="background-color: ${color.color}"></span><p>${colors.indexOf(color)}</p>
             </div>`;
         });
     }
@@ -152,7 +152,7 @@ finishButton.addEventListener("click", function saveDrawing() {
     document.querySelector(".finish-page").classList.add("vertical");
 
     // Print button / reminder /etc
-    window.print();
+    //window.print();
 })
 
 function rgbToHex(col)
