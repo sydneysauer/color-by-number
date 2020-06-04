@@ -153,7 +153,7 @@ finishButton.addEventListener("click", function saveDrawing() {
     document.querySelector(".finish-page").classList.add("vertical");
 
     // Print button / reminder /etc
-    //window.print();
+    window.print();
 })
 
 function rgbToHex(col)

@@ -164,3 +164,33 @@ button:hover {
         display: none;
     }
 }
+
+@media print {
+    body {
+        background: white;
+        display: block;
+    }
+    .grid {
+        display: block;
+        margin: auto;
+        width: 600px;
+        height: 600px;
+    }
+    .colorkey {
+        color: black;
+        display: block;
+        width: 600px;
+    }
+    .colorkey > * {
+        display: inline-block;
+        color: black;
+        width: 300px;
+    }
+    p {
+        color: black;
+    }
+    span {
+        display: inline-block;
+    }
+
+}
