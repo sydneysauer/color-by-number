@@ -150,3 +150,17 @@ button:hover {
 #restart, #finish {
     margin: 10px;
 }
+
+@media only screen and (max-width: 728px) {
+    .mobile-shown {
+        display: inline-block;
+        margin: auto;
+        color: white;
+        text-align: center;
+        margin-top: 30vh;
+        padding: 30px;      
+    }
+    .mobile-hidden {
+        display: none;
+    }
+}

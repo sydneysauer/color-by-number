@@ -3,7 +3,7 @@
 var startBtn = document.querySelector("#start");
 startBtn.addEventListener("click", function buildGrid() {
     // Hide initial options
-    const grid = document.querySelector(".hidden");
+    const grid = document.querySelector(".creator");
     grid.classList.remove("hidden");
     grid.classList.add("vertical");
     const startScreeen = document.querySelector(".initial-options");
