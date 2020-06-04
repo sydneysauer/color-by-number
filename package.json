@@ -4,8 +4,7 @@
   "description": "A manual color by number creator.",
   "main": "index.js",
   "scripts": {
-    "test": "test",
-    "build": "npm run build"
+    "test": "test"
   },
   "repository": {
     "type": "git",
