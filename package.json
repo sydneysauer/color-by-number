@@ -1,0 +1,20 @@
+{
+  "name": "color-by-number",
+  "version": "1.0.0",
+  "description": "A manual color by number creator.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "build": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sydneysauer/color-by-number.git"
+  },
+  "author": "Sydney Sauer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sydneysauer/color-by-number/issues"
+  },
+  "homepage": "https://github.com/sydneysauer/color-by-number#readme"
+}
