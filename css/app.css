@@ -1,6 +1,8 @@
 html {
     padding: 0;
     margin: 0;
+    background: radial-gradient(#47bbed, #000000);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 div {
@@ -8,8 +10,26 @@ div {
 }
 p {
     margin: 0;
+    color: white;
 }
-
+h1, h2, h3 {
+    border-bottom: 2px solid black;
+}
+label {
+    color: black;
+    margin-right: 20px;
+}
+button {
+    background: white;
+    color: #000000;
+    border-radius: 10px;
+    margin: 20px;
+}
+button:hover {
+    background: black;
+    color: white;
+    cursor: pointer;
+}
 .hidden {
     display: none;
 }
@@ -38,6 +58,15 @@ p {
     align-items: center;
 }
 
+.initial-options > * {
+    font-size: large;
+    padding: 10px;
+    color: black;
+
+}
+.white {
+    color: white;
+}
 .color-chunk {
     width: 20px;
     height: 20px;
@@ -53,6 +82,8 @@ p {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+
+    background: white;
 }
 
 .section {
@@ -86,7 +117,36 @@ p {
     justify-content: space-evenly;
 }
 
-#all-colors {
+.options > * {
+    background: white;
+    border-radius: 20px;
+    border: 2px solid black;
+    margin-bottom: 1vh;
+    padding: 10px;
+    box-shadow: 2px 2px 10px black;
+    min-height: 10vh;
     max-height: 40vh;
+}
+
+.colorkey {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 95vh;
+}
+
+.colorkey > * {
+    box-sizing: border-box;
+    width: 50%;
+    overflow: hide;
+    padding: 10px;
+}
+
+
+#all-colors {
     overflow-y: scroll;
+}
+
+#restart, #finish {
+    margin: 10px;
 }

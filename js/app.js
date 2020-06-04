@@ -139,6 +139,7 @@ finishButton.addEventListener("click", function saveDrawing() {
     // Add color list vertically aligned
     var colorkey = "";
     if (colors.length > 0) {
+
         colors.forEach(color => {
             colorkey += `<div class="horizontal">
             <span class="color-chunk" style="background-color: ${color.color}"></span><p>${colors.indexOf(color)}</p>

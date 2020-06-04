@@ -6,9 +6,13 @@
     </head>
     <body>        
         <div class="initial-options"> 
-            <p> How may rows and columns do you want to work with?</p>
-            <label>Rows: </label><input type="number" value="25" id="rows"><br>
-            <label>Columns: </label><input type="number" value="25" id="columns"><br>
+            <h1 class="white"> How may rows and columns do you want to work with?</h1>
+            <div class="horizontal">
+                <label>Rows</label><input type="number" value="25" id="rows"><br>
+            </div>
+            <div class="horizontal">
+                <label>Columns</label><input type="number" value="25" id="columns"><br>
+            </div>
             <button id="start">Let's Go!</button>
         </div>
             
@@ -18,12 +22,11 @@
                     <div class="box grid"></div>
                     <div class="colorkey hidden"></div>
                 </div>
-                <div class="vertical options">
-                    
+                <div class="vertical options">                  
                     <div class="vertical">
                         <h3>Add Color to List</h3>
                         <div class="horizontal">
-                            <label>Name: </label><input type="text" id="name" value="1"><br>
+                            <label>Name: </label><input type="text" id="name" value="My color name"><br>
                         </div>
                         <div class="horizontal">
                             <label>Color: </label><input type="color" id="color"><br>
