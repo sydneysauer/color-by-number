@@ -72,6 +72,7 @@ button:hover {
     height: 20px;
     border-radius: 50%;
     display: block;
+    text-align: center;
 }
 
 .box {
@@ -184,7 +185,7 @@ button:hover {
     .colorkey > * {
         display: inline-block;
         color: black;
-        width: 300px;
+        width: auto;
     }
     p {
         color: black;

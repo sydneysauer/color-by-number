@@ -141,8 +141,8 @@ finishButton.addEventListener("click", function saveDrawing() {
     if (colors.length > 0) {
 
         colors.forEach(color => {
-            colorkey += `<div class="horizontal">
-            <span class="color-chunk" style="background-color: ${color.color}"></span><p>${colors.indexOf(color)}</p>
+            colorkey += `<div class="horizontal center">
+            <span class="color-chunk" style="border: 10px solid ${color.color}">${colors.indexOf(color)}</span>
             </div>`;
         });
     }
